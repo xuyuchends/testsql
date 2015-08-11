@@ -1,0 +1,41 @@
+CREATE TABLE [dbo].[CDM_tblSHORTCUTS]
+(
+[ShortcutID] [bigint] NOT NULL IDENTITY(1, 1),
+[ID] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[Caption] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[Language_2_Name] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Language_3_Name] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Language_4_Name] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Language_5_Name] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Display_Seq] [int] NULL,
+[Link] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Action] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Color] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[All_Sections] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Section] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Special_Process] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Hide_Menu] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Hide_ShortMenu] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Security_Module] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Security_FieldID] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Show_Button] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UnSelected_State] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Extra_Menu] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ShortCut_Menu] [nvarchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Menu_Meal_Type] [nvarchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[default_menu_link] [char] (1) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL CONSTRAINT [DF_CDM_tblSHORTCUTS_default_menu_link] DEFAULT ('N'),
+[fore_color] [nvarchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL CONSTRAINT [DF_CDM_tblSHORTCUTS_fore_color] DEFAULT (''),
+[back_color_net] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[fore_color_net] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Web_Show] [bit] NOT NULL CONSTRAINT [DF_CDM_tblSHORTCUTS_Web_Show] DEFAULT ((0)),
+[OrderMan_Caption] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LastUpdate] [datetime] NULL,
+[EditorID] [int] NULL,
+[EditorName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[MCColor] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[MCfore_color] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ActionID] [bigint] NULL
+) ON [PRIMARY]
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'to show menu item on web on line order system ', 'SCHEMA', N'dbo', 'TABLE', N'CDM_tblSHORTCUTS', 'COLUMN', N'Web_Show'
+GO
