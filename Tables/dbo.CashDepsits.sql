@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[CashDepsits]
 (
-[StoreI] [int] NOT NULL,
+[StoreID] [int] NOT NULL,
 [ID] [int] NOT NULL,
 [BusinessDate] [smalldatetime] NOT NULL,
 [CashDeposit] [money] NOT NULL,
